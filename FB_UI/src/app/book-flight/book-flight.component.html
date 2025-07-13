@@ -1,0 +1,72 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <div class="panel panel-primary">
+      <div class="panel-heading text-center">
+        <strong>Book the Flight</strong>
+      </div>
+
+      <!-- Background with padding and overlay -->
+      <div class="panel-body p-4" 
+           style="background-image: url('assets/flight-bg.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; border-radius: 8px;">
+
+        <!-- Semi-transparent overlay -->
+        <div style="background-color: rgba(255, 255, 255, 0.9); padding: 20px; border-radius: 8px;">
+          <form [formGroup]="bookingForm" (ngSubmit)="book()">
+            
+            <!-- Passenger Name -->
+            <div class="form-group">
+              <label>Passenger Name</label>
+              <input class="form-control" formControlName="passengerName" />
+              <span
+                id="passengerNameerror"
+                class="text-danger"
+                *ngIf="bookingForm.get('passengerName')?.invalid && (bookingForm.get('passengerName')?.dirty || bookingForm.get('passengerName')?.touched)">
+                Passenger name is required.
+              </span>
+            </div>
+
+            <!-- Number of Tickets -->
+            <div class="form-group">
+              <label>Number of Tickets</label>
+              <input type="number" class="form-control" formControlName="noOfTickets" />
+              <span
+                id="noOfTicketserror"
+                class="text-danger"
+                *ngIf="bookingForm.get('noOfTickets')?.invalid && (bookingForm.get('noOfTickets')?.dirty || bookingForm.get('noOfTickets')?.touched)">
+                <span *ngIf="bookingForm.get('noOfTickets')?.errors?.['required']">Number of tickets is required.</span>
+                <span *ngIf="bookingForm.get('noOfTickets')?.errors?.['min']">Minimum 1 ticket required.</span>
+              </span>
+            </div>
+
+            <!-- Flight ID -->
+            <div class="form-group">
+              <label>Flight ID</label>
+              <input class="form-control" formControlName="flightId" />
+              <span
+                id="flightIderror"
+                class="text-danger"
+                *ngIf="bookingForm.get('flightId')?.invalid && (bookingForm.get('flightId')?.dirty || bookingForm.get('flightId')?.touched)">
+                <span *ngIf="bookingForm.get('flightId')?.errors?.['required']">Flight ID is required.</span>
+                <span *ngIf="bookingForm.get('flightId')?.errors?.['invalidFlightId']">Flight ID must be like IND-105</span>
+              </span>
+            </div>
+
+            <!-- Book Button -->
+            <div class="text-center mt-3">
+              <button class="btn btn-primary" type="submit">Book</button>
+            </div>
+          </form>
+
+          <!-- Success and Error Messages -->
+          <div *ngIf="errorMessage" class="alert alert-danger mt-3 text-center">
+            {{ errorMessage }}
+          </div>
+          <div *ngIf="successMessage" class="alert alert-success mt-3 text-center">
+            {{ successMessage }}
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
