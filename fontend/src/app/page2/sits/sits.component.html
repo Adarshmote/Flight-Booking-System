@@ -1,0 +1,100 @@
+<section class="sits">
+
+    <h3>Choose Your Place</h3>
+
+    <div class="plane">
+        <div class="plane__img"><img src="../../../assets/airplanedown.png" alt=""></div>
+        <p class="plane__description"></p>
+    </div>
+
+    <div *ngIf="planeOne" class="plane1">
+        <div class="cabin">
+            <div *ngFor="let sit of PlaneOneSits[0]; index as i" class="cabin__sits">
+                <div class="sit" *ngFor="let sit of PlaneOneSits[1]; index as j">
+                    <div (click)="chooseSit($event)" [id]="sit+(i+1)"></div>
+                    <p>{{sit}}</p>
+                </div>
+
+                <div class="row">{{i+1}}</div>
+
+                <div class="sit" *ngFor="let sit of PlaneOneSits[2]; index as j">
+                    <div (click)="chooseSit($event)" [id]="sit+(i+1)"></div>
+                    <p>{{sit}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="planeTwo" class="plane2">
+        <div class="cabin">
+            <div *ngFor="let sit of PlaneTwoSits[0]; index as i" class="cabin__sits">
+                <div class="sit" *ngFor="let sit of PlaneTwoSits[1]; index as j">
+                    <div (click)="chooseSit($event)" [id]="sit+(i+1)"></div>
+                    <p>{{sit}}</p>
+                </div>
+
+                <div class="row">{{i+1}}</div>
+
+                <div class="sit" *ngFor="let sit of PlaneTwoSits[2]; index as j">
+                    <div (click)="chooseSit($event)" [id]="sit+(i+1)"></div>
+                    <p>{{sit}}</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="cabin">
+            <div *ngFor="let sit of PlaneTwoSits[0]; index as i" class="cabin__sits">
+
+                <div class="sit" *ngFor="let sit of PlaneTwoSits[3]; index as j">
+                    <div (click)="chooseSit($event)" [id]="sit+(i+1)"></div>
+                    <p>{{sit}}</p>
+                </div>
+
+                <div class="row">{{i+1}}</div>
+
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="planeThree" class="plane3">
+
+        <div class="cabin">
+            <div *ngFor="let sit of PlaneThreeSits[0]; index as i" class="cabin__sits">
+                <div class="sit" *ngFor="let sit of PlaneThreeSits[1]; index as j">
+                    <div (click)="chooseSit($event)" [id]="sit+(i+1)"></div>
+                    <p>{{sit}}</p>
+                </div>
+
+                <div class="row">{{i+1}}</div>
+
+                <div class="sit" *ngFor="let sit of PlaneThreeSits[2]; index as j">
+                    <div (click)="chooseSit($event)" [id]="sit+(i+1)"></div>
+                    <p>{{sit}}</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="cabin">
+            <div *ngFor="let sit of PlaneThreeSits[0]; index as i" class="cabin__sits">
+                <div class="sit" *ngFor="let sit of PlaneThreeSits[3]; index as j">
+                    <div (click)="chooseSit($event)" [id]="sit+(i+1)"></div>
+                    <p>{{sit}}</p>
+                </div>
+                <div class="row">{{i+1}}</div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="legend">
+        <H6>LEGEND</H6>
+        <div class="legend__content">
+            <div class="grey"></div>
+            <p>available</p>
+            <div class="red"></div>
+            <p>your choice</p>
+            <div class="blue"></div>
+            <p>busy</p>
+        </div>
+    </div>
+</section>

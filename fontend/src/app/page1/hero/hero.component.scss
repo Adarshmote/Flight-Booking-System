@@ -1,0 +1,47 @@
+@import '/src/assets/main.scss';
+
+
+.hero{
+    height: 70vh;
+    background-image: url(./hero.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+  @media (min-width: $tablet){
+    height: 80vh;
+    flex-direction: row;
+   }
+
+   &__weather{
+    @media (min-width: $tablet){
+        position: absolute;
+        left: 10%;
+    }
+   }
+
+    &__title{
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.5rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        color: rgba(255,255,119, 1);
+        @media (min-width: $tablet){
+            position: absolute;
+            font-size: 2rem;
+           }
+    }
+    svg{
+        position: absolute;
+        right: -20%;
+        width: 5em;
+        height: auto;
+    }
+}

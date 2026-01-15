@@ -1,0 +1,71 @@
+@import '/src/assets/main.scss';
+
+.card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 2em;
+
+h3{
+    text-align: center;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+    padding-bottom: 0.5em;
+    width: 50%;
+}
+
+&__body{
+    width: 90%;
+   margin-top: 2em;
+    background: $mainColor;
+    padding: 2em;
+
+    @media (min-width: $tablet){
+        width: 50%;
+        }
+}
+
+.form-group{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1em;
+   
+}
+
+.form-control{
+    width: 70%;
+    border: none;
+    padding: 0.5em;
+}
+
+.text-danger{
+    margin-top: 1em;
+    color: red;
+    font-size: 0.7rem;
+    text-align: center;
+}
+
+.button{
+    font-size: 0.7rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.visible{
+    visibility: visible;
+    margin-top: 1em;
+}
+
+.hidden{
+    visibility: hidden;
+}
+
+}
+
+#noExist{
+    margin-top: 1em;
+    color: red;
+}

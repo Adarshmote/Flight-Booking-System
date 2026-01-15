@@ -1,0 +1,40 @@
+<div class="button">
+    <app-button (click)="showSummary()">Choose</app-button>
+    <p>{{sitsAlert}}</p>
+    <p>{{luggageAlert}}</p>
+</div>
+
+<div #target>
+    <div *ngIf="show" class="summary">
+
+        <h3>SUMMARY</h3>
+
+        <app-show-flight></app-show-flight>
+
+        <div class="summary__card">
+            <div class="summary__content">
+                <div class="cost">
+                    <p>SITS</p><span>{{sits}}</span>
+                </div>
+                <div class="cost">
+                    <p>LUGGAGE</p><span>{{ luggagePrice }}</span>PLN
+                </div>
+                <div class="cost">
+                    <p>TICKET</p><span>{{ticketPrice}}</span>PLN
+                </div>
+
+                <div class="summary__price">ALL: <span class="all">{{amount || sum}}</span>
+                    <select (change)="changeCurrency($event)" name="currency">
+                        <option *ngFor="let currency of currencies" [value]="currency" [selected]='currencies[0]'>
+                            {{currency}}</option>
+
+                    </select>
+                </div>
+            </div>
+            <div class="summary__weather">
+                <app-weather-widget></app-weather-widget>
+            </div>
+        </div>
+        <app-button (click)="backToHomePage()" routerLink='/'>Back to homepage</app-button>
+    </div>
+</div>

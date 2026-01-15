@@ -1,0 +1,20 @@
+$colorButton: rgba(42,144,210, 1);
+$colorButtonDisabled: rgba(42,144,210, 0.5);
+$colorButtonHover: rgb(33, 115, 170);
+
+button{
+    padding: 0.5em 1.5em;
+    background-color: $colorButton;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease-in;
+
+    &:hover{
+        background-color: $colorButtonHover;
+    }
+}
+
+button:disabled{
+    background-color: $colorButtonDisabled;
+}

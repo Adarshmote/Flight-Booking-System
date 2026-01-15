@@ -1,0 +1,89 @@
+@import '/src/assets/main.scss';
+
+nav{
+    position: absolute;
+    top: 0;
+    background-color: $mainColor;
+    padding: 1em;
+    width: 100%;
+   z-index: 10;
+
+   @media (min-width: $tablet){
+    position: relative;
+    display: flex;
+    padding: 0;
+    }
+    ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    list-style: none;
+    background-color: $mainColor;
+    width: 100%;
+    z-index: 10;
+
+    @media (min-width: $tablet){
+     flex-direction: row;
+     justify-content: flex-end;
+     background-color: transparent;
+     }
+    }
+ 
+    .nav__item{
+      margin: 2em;
+      @media (min-width: $tablet){
+        margin: 1em 2em;
+        }
+    }
+
+    a{
+        text-decoration: none;
+        color: $fontColor;
+        transition: all 0.2s ease-in-out;
+
+        &:not(#user):hover{
+          border-bottom: 2px solid $secondColor;
+          color: black;
+        }
+
+        &:focus{
+          color: $secondColor;
+        }
+    }
+
+    i{
+        font-size: 2rem;
+    }
+    
+    .upnav{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @media (min-width: $tablet){
+      
+          background-color: transparent;
+          }
+    }
+
+    .upnav > * {
+      margin: 0 1em;
+    }
+
+    .logo{
+      outline: none;
+    }
+
+
+    .fa-times, .fa-bars{
+      @media (min-width: $tablet){
+        display: none;
+        }
+    }
+
+    #user{
+      color: green;
+    }
+   
+}

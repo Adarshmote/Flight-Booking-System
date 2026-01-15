@@ -1,0 +1,39 @@
+<div class="luggage__section">
+    <h3>Choose your luggage</h3>
+
+
+    <div *ngFor="let item of fakeArray(people); index as i" class="luggage">
+
+        <h5 class="person">Person {{i+1}}</h5>
+
+        <div class="luggage__wrapper">
+            <div (click)="chooseLuggage($event)" class="luggage__card" price="0" [id]="i">
+                <div class="luggage__header">Basic</div>
+                <div class="luggage__body">
+                    <p>hand luggage 55x40x23cm, 8kg</p>
+                    <p>personal item 40x35x12cm, 2kg</p>
+                    <app-button>Free</app-button>
+                </div>
+            </div>
+
+            <div (click)="chooseLuggage($event)" class="luggage__card" price="230" [id]="i">
+                <div class="luggage__header">Standard</div>
+                <div class="luggage__body">
+                    <p>Checked Baggage max 150cm, 23kg</p>
+                    <p>personal item 40x35x12cm, 2kg</p>
+                    <app-button>230 PLN</app-button>
+                </div>
+
+            </div>
+
+            <div (click)="chooseLuggage($event)" class="luggage__card" price="320" [id]="i">
+                <div class="luggage__header">Premium</div>
+                <div class="luggage__body">
+                    <p>Checked Baggage max 170cm, 33kg</p>
+                    <p>personal item 40x35x12cm, 2kg</p>
+                    <app-button>320 PLN</app-button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

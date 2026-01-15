@@ -1,0 +1,11 @@
+@import '/src/assets/main.scss';
+
+
+footer{
+    padding: 1em;
+    margin-top: 2em;
+    background-color: $mainColor;
+    text-align: center;
+    width: 100%;
+    color: $fontColor;
+}
