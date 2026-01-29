@@ -1,0 +1,30 @@
+<div class="auth-container">
+  <div class="auth-card">
+    <h2>Signup Form</h2>
+
+    <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+      <input type="text" placeholder="Name" formControlName="name" />
+      <input type="email" placeholder="Email Address" formControlName="email" />
+      <input type="password" placeholder="Password" formControlName="password" />
+      <input type="password" placeholder="Confirm Password" formControlName="confirmPassword" />
+
+      <!-- ✅ ROLE SELECTION -->
+      <div class="role-group">
+        <label>
+          <input type="radio" value="user" formControlName="role" />
+          User
+        </label>
+        <label>
+          <input type="radio" value="admin" formControlName="role" [disabled]="true" />
+          Admin
+        </label>
+      </div>
+
+      <button type="submit" class="submit-btn">Signup</button>
+    </form>
+
+    <p class="switch-text">
+      Already a member? <span (click)="navigateToLogin()">Login now</span>
+    </p>
+  </div>
+</div>

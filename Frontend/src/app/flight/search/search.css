@@ -1,0 +1,144 @@
+/* Page Background */
+.container {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Title */
+h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #1e293b;
+}
+
+/* Search Box */
+.search-box {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+  background: #ffffff;
+  padding: 18px;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+  margin-bottom: 25px;
+}
+
+.search-box input {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  min-width: 160px;
+  font-size: 14px;
+  transition: 0.2s ease;
+}
+
+.search-box input:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.15);
+}
+
+.search-box button {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.search-box button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.3);
+}
+
+/* Error Message */
+.error {
+  color: #dc2626;
+  text-align: center;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+/* Flight Cards Grid */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+/* Individual Card */
+.flight-card {
+  background: white;
+  border-radius: 14px;
+  padding: 18px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.07);
+  transition: 0.3s ease;
+  border: 1px solid #e2e8f0;
+}
+
+.flight-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 35px rgba(0,0,0,0.12);
+}
+
+.flight-card h3 {
+  margin: 0 0 6px;
+  color: #1e40af;
+}
+
+.flight-card p {
+  margin: 4px 0;
+  color: #475569;
+  font-size: 14px;
+}
+
+.price {
+  font-size: 18px;
+  font-weight: bold;
+  color: #16a34a;
+  margin-top: 8px;
+}
+
+/* Select Button */
+.flight-card button {
+  margin-top: 10px;
+  width: 100%;
+  padding: 8px;
+  border-radius: 8px;
+  border: none;
+  background: #0ea5e9;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.flight-card button:hover {
+  background: #0284c7;
+}
+
+/* Loading Text */
+p[ng-reflect-ng-if="true"] {
+  text-align: center;
+  font-weight: 500;
+  color: #2563eb;
+}
+
+/* Mobile Tweaks */
+@media (max-width: 600px) {
+  .search-box {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .search-box input,
+  .search-box button {
+    width: 100%;
+  }
+}

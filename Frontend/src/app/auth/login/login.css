@@ -1,0 +1,122 @@
+/* Container */
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #f5f5f5; /* light, minimal background */
+  padding: 20px;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Card */
+.auth-card {
+  background: #ffffff;
+  padding: 35px 30px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 380px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.auth-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+
+/* Heading */
+.auth-card h2 {
+  margin-bottom: 25px;
+  color: #333;
+  font-weight: 600;
+}
+
+/* Inputs */
+form input {
+  width: 100%;
+  padding: 14px 15px;
+  margin-bottom: 18px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+  font-size: 14px;
+  transition: border-color 0.3s ease;
+}
+
+form input:focus {
+  border-color: #3b82f6;
+}
+
+/* Forgot Password */
+.forgot-password {
+  font-size: 13px;
+  color: #3b82f6;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 18px;
+  text-align: right;
+  cursor: pointer;
+}
+
+.forgot-password:hover {
+  text-decoration: underline;
+}
+
+/* Submit Button */
+.submit-btn {
+  width: 100%;
+  padding: 14px;
+  background: #3b82f6;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.submit-btn:hover {
+  background: #2563eb;
+}
+
+/* Switch Text */
+.switch-text {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+  color: #555;
+}
+
+.switch-text span {
+  color: #3b82f6;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.switch-text span:hover {
+  text-decoration: underline;
+}
+
+/* Role Selection */
+.role-group {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 18px;
+  font-size: 14px;
+  color: #444;
+}
+
+.role-group label {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  cursor: pointer;
+}
+
+.role-group input[type="radio"] {
+  accent-color: #3b82f6;
+  cursor: pointer;
+}

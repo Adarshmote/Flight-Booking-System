@@ -1,0 +1,25 @@
+<app-header></app-header>
+
+<div class="container">
+  <h2>Search Flights</h2>
+
+  <div class="search-box">
+    <input type="text" [(ngModel)]="from" placeholder="From city" />
+    <input type="text" [(ngModel)]="to" placeholder="To city" />
+    <input type="date" [(ngModel)]="date" />
+    <button type="button" (click)="search()">Search</button>
+  </div>
+
+  <p class="error" *ngIf="error">{{ error }}</p>
+  <p *ngIf="loading">Searching flights...</p>
+
+  <div class="cards" *ngIf="flights.length">
+    <div class="flight-card" *ngFor="let flight of flights">
+      <h3>{{ flight.airline }}</h3>
+      <p>{{ flight.from }} → {{ flight.to }}</p>
+      <p>Departure: {{ flight.departureTime | date:'short' }}</p>
+      <p class="price">₹{{ flight.price }}</p>
+      <button (click)="selectFlight(flight)">Select</button>
+    </div>
+  </div>
+</div>

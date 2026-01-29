@@ -1,0 +1,17 @@
+<div class="auth-container">
+  <div class="auth-card">
+    <h2>Login Form</h2>
+
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <input type="email" placeholder="Email Address" formControlName="email" />
+      <input type="password" placeholder="Password" formControlName="password" />
+
+      <a href="#" class="forgot-password">Forgot password?</a>
+      <button type="submit" class="submit-btn">Login</button>
+    </form>
+
+    <p class="switch-text">
+      Not a member? <span (click)="navigateToSignup()">Signup now</span>
+    </p>
+  </div>
+</div>

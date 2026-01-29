@@ -1,0 +1,16 @@
+.header {
+  background: linear-gradient(90deg, #007bff, #00c6ff);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 30px;
+  align-items: center;
+}
+button {
+  background: white;
+  color: #007bff;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}

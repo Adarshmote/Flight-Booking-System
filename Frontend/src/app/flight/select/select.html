@@ -1,0 +1,51 @@
+<app-header></app-header>
+
+<div class="container" *ngIf="flight; else noFlight">
+
+  <!-- Flight Info Card -->
+  <div class="flight-info">
+    <h2>{{ flight.airline }}</h2>
+    <p>{{ flight.from }} → {{ flight.to }}</p>
+    <p>Departure: {{ flight.departureTime | date:'medium' }}</p>
+    <p class="price">₹{{ flight.price }}</p>
+  </div>
+
+  <h3 class="title">Select Your Seats</h3>
+
+  <!-- Seat Map -->
+  <div class="seat-map">
+    <div class="row" *ngFor="let row of ['A','B','C','D']">
+      <div 
+        class="seat"
+        *ngFor="let num of [1,2,3,4,5,6]"
+        (click)="toggleSeat(row + num)"
+        [class.selected]="selectedSeats.includes(row + num)">
+        {{ row + num }}
+      </div>
+    </div>
+  </div>
+
+  <!-- Selected Seats Display -->
+  <p class="selected-display" *ngIf="selectedSeats.length > 0">
+    Selected Seats: {{ selectedSeats.join(', ') }}
+  </p>
+
+  <!-- Legend -->
+  <div class="legend">
+    <span><div class="box available"></div> Available</span>
+    <span><div class="box selected"></div> Selected</span>
+  </div>
+
+  <!-- Continue Button -->
+  <button 
+    class="continue-btn"
+    (click)="continue()" 
+    [disabled]="selectedSeats.length === 0">
+    Continue to Summary ({{ selectedSeats.length }} seats)
+  </button>
+
+</div>
+
+<ng-template #noFlight>
+  <p class="error">No flight selected. Go back and choose a flight.</p>
+</ng-template>

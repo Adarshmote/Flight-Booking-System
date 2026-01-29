@@ -1,0 +1,68 @@
+<app-header></app-header>
+<!-- rest of user UI -->
+
+<div class="manage-container">
+
+  <h2>✈️ Manage Flights</h2>
+
+  <!-- FORM CARD -->
+  <div class="card">
+    <h3>{{ editingId ? 'Update Flight' : 'Add New Flight' }}</h3>
+
+    <form [formGroup]="flightForm" (ngSubmit)="submit()">
+
+      <div class="grid">
+        <input placeholder="Airline" formControlName="airline">
+        <input placeholder="From" formControlName="from">
+        <input placeholder="To" formControlName="to">
+        <input type="datetime-local" formControlName="departureTime">
+        <input type="datetime-local" formControlName="arrivalTime">
+        <input type="number" placeholder="Price" formControlName="price">
+        <input type="number" placeholder="Seats Available" formControlName="seatsAvailable">
+      </div>
+
+      <button type="submit" [disabled]="loading">
+        {{ editingId ? 'Update Flight' : 'Add Flight' }}
+      </button>
+    </form>
+  </div>
+
+  <!-- TABLE -->
+  <div class="card">
+    <h3>All Flights</h3>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Airline</th>
+          <th>Route</th>
+          <th>Departure</th>
+          <th>Arrival</th>
+          <th>Price</th>
+          <th>Seats</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let f of flights">
+          <td>{{ f.airline }}</td>
+          <td>{{ f.from }} → {{ f.to }}</td>
+          <td>{{ f.departureTime | date:'short' }}</td>
+          <td>{{ f.arrivalTime | date:'short' }}</td>
+          <td>₹ {{ f.price }}</td>
+          <td>{{ f.seatsAvailable }}</td>
+          <td>
+            <button class="edit" (click)="edit(f)">Edit</button>
+            <button class="delete" (click)="delete(f._id)">Delete</button>
+          </td>
+        </tr>
+
+        <tr *ngIf="flights.length === 0">
+          <td colspan="7">No flights available</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>

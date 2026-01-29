@@ -1,0 +1,51 @@
+<app-header></app-header>
+
+<div class="container" *ngIf="flight && seats.length; else missing">
+
+  <h2 class="title">Booking Summary</h2>
+
+  <div class="summary-wrapper">
+
+    <!-- Flight Info -->
+    <div class="card flight-card">
+      <h3>{{ flight.airline }}</h3>
+      <p>{{ flight.from }} → {{ flight.to }}</p>
+      <p>Departure: {{ flight.departureTime | date:'medium' }}</p>
+    </div>
+
+    <!-- Seat Details -->
+    <div class="card">
+      <h4>Selected Seats</h4>
+      <div class="seats">
+        <span class="seat" *ngFor="let seat of seats">{{ seat }}</span>
+      </div>
+    </div>
+
+    <!-- Price Details -->
+    <div class="card price-card">
+      <h4>Fare Details</h4>
+      <div class="row">
+        <span>Seat Price</span>
+        <span>₹{{ flight.price }}</span>
+      </div>
+      <div class="row">
+        <span>Seats</span>
+        <span>{{ seats.length }}</span>
+      </div>
+      <div class="row total">
+        <span>Total</span>
+        <span>₹{{ total }}</span>
+      </div>
+    </div>
+
+  </div>
+
+  <button class="confirm-btn" (click)="confirm()">
+    Confirm Booking
+  </button>
+
+</div>
+
+<ng-template #missing>
+  <p class="error">Booking data missing. Please start again.</p>
+</ng-template>
